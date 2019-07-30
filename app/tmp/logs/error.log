@@ -1,0 +1,44 @@
+2019-07-30 20:18:21 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'trading_24\'',
+  'enabled' => true,
+)
+Request URL: /trading24/
+Stack Trace:
+#0 /var/www/html/trading24/lib/Cake/Model/Datasource/DboSource.php(271): Mysql->connect()
+#1 /var/www/html/trading24/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /var/www/html/trading24/lib/Cake/Model/Model.php(3640): ConnectionManager::getDataSource('default')
+#3 /var/www/html/trading24/lib/Cake/Model/Model.php(1162): Model->setDataSource('default')
+#4 /var/www/html/trading24/lib/Cake/Model/Model.php(3667): Model->setSource('ips')
+#5 /var/www/html/trading24/lib/Cake/Model/Model.php(3158): Model->getDataSource()
+#6 /var/www/html/trading24/lib/Cake/Model/Model.php(3071): Model->_findCount('before', Array)
+#7 /var/www/html/trading24/lib/Cake/Model/Model.php(3005): Model->buildQuery('count', Array)
+#8 /var/www/html/trading24/app/Controller/CurrenciesController.php(99): Model->find('count', Array)
+#9 [internal function]: CurrenciesController->ranking('home')
+#10 /var/www/html/trading24/lib/Cake/Controller/Controller.php(491): ReflectionMethod->invokeArgs(Object(CurrenciesController), Array)
+#11 /var/www/html/trading24/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/trading24/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CurrenciesController), Object(CakeRequest))
+#13 /var/www/html/trading24/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 /var/www/html/trading24/index.php(41): require('/var/www/html/t...')
+#15 {main}
+2019-07-30 20:18:44 Error: [MissingTableException] Table ips for model Ip was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'ips',
+  'class' => 'Ip',
+  'ds' => 'default',
+)
+Request URL: /trading24/
+Stack Trace:
+#0 /var/www/html/trading24/lib/Cake/Model/Model.php(3667): Model->setSource('ips')
+#1 /var/www/html/trading24/lib/Cake/Model/Model.php(3158): Model->getDataSource()
+#2 /var/www/html/trading24/lib/Cake/Model/Model.php(3071): Model->_findCount('before', Array)
+#3 /var/www/html/trading24/lib/Cake/Model/Model.php(3005): Model->buildQuery('count', Array)
+#4 /var/www/html/trading24/app/Controller/CurrenciesController.php(99): Model->find('count', Array)
+#5 [internal function]: CurrenciesController->ranking('home')
+#6 /var/www/html/trading24/lib/Cake/Controller/Controller.php(491): ReflectionMethod->invokeArgs(Object(CurrenciesController), Array)
+#7 /var/www/html/trading24/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/trading24/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CurrenciesController), Object(CakeRequest))
+#9 /var/www/html/trading24/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/trading24/index.php(41): require('/var/www/html/t...')
+#11 {main}
